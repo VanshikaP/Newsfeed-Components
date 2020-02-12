@@ -137,10 +137,16 @@ function createArticle(obj){
   p1.textContent = obj.firstParagraph;
   p2.textContent = obj.secondParagraph;
   p3.textContent = obj.thirdParagraph;
+  span.textContent = '...';
   
   //add functionality
-  title.addEventListener('click', () => {
+  span.addEventListener('click', () => {
     article.classList.toggle('article-open');
+    if (span.textContent === '...'){
+      span.textContent = 'Show Less';
+    } else {
+      span.textContent = '...';
+    }
   });
 
   //return component
